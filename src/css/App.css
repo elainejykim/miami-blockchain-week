@@ -1,0 +1,144 @@
+html, body, html * {
+  font-family: 'Roboto', 'Roboto Mono', sans-serif;
+}
+
+a {
+  text-decoration: none; 
+  color: black;
+}
+
+.NAV {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  background-color: white;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.NAV-Space {
+  height: 60px;
+  padding: 0.5rem 0;
+  background-color: black;
+}
+
+.NAV-Title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 42px;
+  padding: 0 1rem;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.NAV-Menu {
+  display: flex;
+  margin-right: 24px;
+}
+
+.NAV-Item {
+  padding: 0 1rem;
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.NAV-Item:hover {
+  color: purple;
+}
+
+.Page-container {
+  width:100%;
+}
+
+.EventCards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.Page-Title {
+  font-size: 2rem;
+  grid-column: 4 / span 2;
+  justify-self: center;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+}
+
+.EventCard {  
+  border: 1px solid #000;
+  grid-column: 3 / span 4;
+  margin-bottom: 2rem;
+  height: 163px;
+  max-height: 163px;
+  display: flex;
+}
+
+.EventCard-img {
+  float: left;
+  height: 90%;
+  width: 35%;
+  position: relative;
+  border: 1px solid #000;
+}
+
+.EventCard-content-top {
+  margin-bottom: 0.5rem;
+}
+
+.EventCard-content {
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 65%;
+  padding-left: 1rem;
+}
+
+.EventCard-content-bottom {
+  position: absolute;
+  bottom: 0rem;
+}
+
+.EventCard-subtext {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.EventCard-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.Footer {
+  margin-top: 2rem;
+  height: 200px;
+  border-top: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.Button {
+  background-color: black;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+}
+
+.Button-text {
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  color: white;
+}
