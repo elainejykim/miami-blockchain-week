@@ -5,14 +5,11 @@ import EventCard from "./EventCard";
 export default function Events() {
 
     return (
-    <div class="Page-container">
-        <div class="NAV-Space"></div>  
+        <section class="events-list">
+            <div class="container">
 
-        
-        <div class="EventCards-container">
+            <h1 class="title flex">Miami</h1>
 
-            <h1 class="Page-Title"> MIAMI </h1>
-            
             {eventsData.map((event) => 
                 <EventCard 
                     title={event.title}
@@ -23,7 +20,9 @@ export default function Events() {
                     img={event.photo}
                 />
             )}
-        </div>
-    </div>
+
+            </div>
+        </section>
+
     );
 }

@@ -4,16 +4,18 @@ export default function EventCard({
     title, date, time, location, price, img
 }) {
     return (
-        <div class="EventCard">
-            <div class="EventCard-img"><img class="" src=""/></div>
-            <div class="EventCard-content">
-                <div class="EventCard-content-top">
-                    <span class="EventCard-subtext">{date}, {time}</span>
-                </div>
-                <span class="EventCard-title">{title}</span>
-                <div class="EventCard-content-bottom">
-                    <span class="EventCard-subtext">{location}</span><br/>
-                    <span class="EventCard-subtext">{price}</span>
+        <div class="event grid card">
+            <div class="event-img">
+                <img src={process.env.PUBLIC_URL + "/img/" + img}/>
+            </div>
+            <div class="event-info">
+                <div class="event-info-top"><p>
+                    {date} - {time} 
+                </p></div>
+                <h1> {title} </h1>
+                <div class="event-info-bottom">  
+                    <p> {location} </p>
+                    <p> {price} </p>
                 </div>
             </div>
         </div>
