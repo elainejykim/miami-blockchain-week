@@ -13,21 +13,6 @@
     height: 100%;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 100%
-}
-
-.footer {
-    margin-top: 3rem;
-    background-color: #333;
-    height: 200px;
-}
-
 .card {
     background-color: #fff;
     border: 1px solid #333;
@@ -40,7 +25,12 @@
     padding: 0.5rem 1rem;
     font-family: "Roboto Mono";
     font-weight: bold;
+    background-color: #fff;
 }
+
+.btn:hover {
+    transform: scale(0.98);
+  }
 
 .title {
 font-weight: 500;
@@ -50,6 +40,24 @@ margin-top: 4rem;
 margin-bottom: 2rem;
 }
 
+/* grids */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
 
 /* Margin */
 .my-1 {
@@ -131,4 +139,42 @@ padding: 3rem;
 
 .p-5 {
 padding: 4rem;
+}
+
+/* Color */
+.d-txt {
+    color: #333;
+}
+
+.l-txt{
+    color: #fff;
+}
+
+.dark-background {
+    background-color: #333;
+}
+
+.light-background {
+    background-color: #fff;
+}
+
+/* Text sizes */
+.sm {
+    font-size: 1rem;
+  }
+  
+.md {
+font-size: 2rem;
+}
+
+.lg {
+font-size: 3rem;
+}
+
+.xl {
+font-size: 4rem;
+}
+
+.text-center {
+text-align: center;
 }

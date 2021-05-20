@@ -107,11 +107,32 @@ img {
   margin: 5px 0;
 }
 
-.event-info-top{}
+/* Submit Event */
+.event-form .collection {
+  justify-content: flex-start;
+}
 
-.event-info-bottom {}
+.event-form .form-control {
+  margin: 30px 0;
+}
+
+.event-form input {
+  border: 0;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 0 2rem;
+}
+
+.event-form .btn {
+}
 
 /* Footer */
+.footer {
+  margin-top: 3rem;
+  background-color: #333;
+  bottom: 0;
+}
+
 .footer .btn {
   background-color: #333;
   border: 1px solid #fff;
@@ -119,4 +140,22 @@ img {
 
 .btn a {
   color: #fff;
+}
+
+.footer .card {
+  background-color: #333;
+  border: none;
+}
+
+.subscription-form input[type="email"] {
+  border: 1px solid #fff;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.fa-twitter {
+  color: white;
+  padding-top: 2rem;
 }
