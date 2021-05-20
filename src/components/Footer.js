@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Subscribe from "./Subscribe";
 
 export default function Footer() {
@@ -10,7 +10,7 @@ export default function Footer() {
                     <h2 class="l-txt md">Blockchain Summer 2021</h2>
                     <p class="l-txt">Copyright &copy; 2021</p>
 
-                    <a href="#" class=""><i class="fab fa-twitter fa-2x "></i></a>
+                    <a href="https://twitter.com/JiyounyK" class=""><i class="fab fa-twitter fa-2x "></i></a>
                 </div>
 
                 <div></div>

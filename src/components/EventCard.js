@@ -6,7 +6,7 @@ export default function EventCard({
     return (
         <div class="event grid card">
             <div class="event-img">
-                <img src={process.env.PUBLIC_URL + "/img/" + img}/>
+                <img src={process.env.PUBLIC_URL + "/img/" + img} alt="Event Thumbnail"/>
             </div>
             <div class="event-info">
                 <div class="event-info-top"><p>

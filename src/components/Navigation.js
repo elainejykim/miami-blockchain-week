@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function Navigation() {
@@ -20,16 +20,3 @@ export default function Navigation() {
         </div>
     )
 }
-
-{/* <div class="navbar">
-<div class="container flex"> 
-    <h1 class="logo">Blockchain Summer 2021</h1>
-    <nav>
-        <ul>
-        <li><a href="/miami">Miami</a></li>
-        <li><a href="/paris">Paris</a></li>
-        <li><a href="/berlin">Berlin</a></li>
-        </ul>
-    </nav>
-</div>
-</div> */}

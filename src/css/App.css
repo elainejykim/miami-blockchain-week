@@ -153,6 +153,12 @@ img {
   border: none;
 }
 
+.fa-twitter {
+  color: white;
+  padding-top: 2rem;
+}
+/* subscribe */
+
 .subscription-form input[type="email"] {
   border: 1px solid #fff;
   width: 100%;
@@ -161,9 +167,16 @@ img {
   color: #fff;
 }
 
-.fa-twitter {
+.subscription-form .flex {
+  justify-content: flex-start;
+}
+
+.subscription-form .btn {
+  padding: 6px;
+}
+
+.fa-arrow-right {
   color: white;
-  padding-top: 2rem;
 }
 
 /* Coming soon */
