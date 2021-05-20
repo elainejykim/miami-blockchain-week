@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
  
 :root {
+  --success-color: #00C08B;
+  --near-blue: #00C1DE;
+  --near-royal: #0072CE;
+  --dark-color: #fff;
+  --near-read: #FF585D;
 }
 
 * {
@@ -51,11 +56,16 @@ img {
   border-bottom: 1px solid #333;
 }
 
+.navbar .logo {
+  text-transform: uppercase;
+  font-size: 3vw;
+}
+
 .navbar ul {
   display: flex;
 }
 
-.navbar a {
+.navbar nav a {
   color: #333;
   padding: 10px;
   margin: 0 5px;
@@ -64,8 +74,7 @@ img {
 }
 
 .navbar a:hover {
-  color: teal;
-  border: 1px solid teal;
+  color: var(--success-color);
 }
 
 .navbar .flex {
@@ -123,9 +132,6 @@ img {
   margin: 0 2rem;
 }
 
-.event-form .btn {
-}
-
 /* Footer */
 .footer {
   margin-top: 3rem;
@@ -138,7 +144,7 @@ img {
   border: 1px solid #fff;
 }
 
-.btn a {
+.footer .btn a {
   color: #fff;
 }
 
@@ -158,4 +164,72 @@ img {
 .fa-twitter {
   color: white;
   padding-top: 2rem;
+}
+
+/* Coming soon */
+.coming-soon .btn {
+  margin-top: 4rem;
+}
+
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  
+  /* Events list */
+  .events-list .container{
+    width: 100%;
+  }
+  
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  /* Navbar */
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .logo {
+    font-size: 5vw;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+  }
+
+  /* Event List */
+
+  .events-list .container{
+    padding: 0;
+    width: 100%;
+  }
+  
+  .event {
+    min-height: 160px;
+  }
+
+  .event h1 {
+    font-weight: 500;
+    font-size: 4vw;
+  }
+  
+  .event p {
+    font-family: "Roboto Mono";
+    font-size: 3vw;
+    margin: 3px 0;
+  }
+
+  /* Submit Event */
+  .form-control {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-form input {
+    margin: 5px;
+  }
 }
