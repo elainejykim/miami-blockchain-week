@@ -1,5 +1,5 @@
-import {useState} from 'react';
 import { projectFirestore } from '../firebase/config';
+import { useState } from 'react';
 
 const PushFirestore = (collectionName, data) => {
     const [docRef, setDocRef] = useState(null);

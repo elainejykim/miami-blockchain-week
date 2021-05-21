@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState } from 'react';
 // import ProgressBar from './ProgressBar';
 import useInput from '../hooks/useInput';
-import useStorage from '../hooks/useStorage';
+// import useStorage from '../hooks/useStorage';
 import { projectFirestore, projectStorage } from '../firebase/config';
 
 export default function SubmitEvent() {
