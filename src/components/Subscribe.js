@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
+import { projectFirestore } from '../firebase/config';
 
 export default function Subscribe() {
 
-    const [email, setEmail] = useState();
-
-    const handleInputChange = (event) => {
-        console.log(event.target.value);
-        setEmail(event.target.value);
-    };
+    const [email, setEmail] = useState("");
+    const collectionRef = projectFirestore.collection('emails');
 
     const onFormSubmit = (event) => {
+        event.preventDefault();
         if (email != null) {
-            console.log("Event target = ", event.target.value);
-            console.log("ENTERED = ", email);
+            collectionRef.add({email});
+            setEmail("");
+            // console.log("email pushed on: ", docRef);
         }
     };
 
@@ -24,8 +23,10 @@ export default function Subscribe() {
                     <input 
                         type="email" 
                         name="email" 
+                        id="email"
                         placeholder="satoshi@gmail.com" 
-                        onChange = {handleInputChange}
+                        value = {email}
+                        onChange ={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
@@ -34,3 +35,5 @@ export default function Subscribe() {
         </div>
     );
 }
+
+// https://reactjs.org/warnings/invalid-hook-call-warning.html

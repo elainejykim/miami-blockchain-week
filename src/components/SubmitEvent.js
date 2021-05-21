@@ -1,6 +1,67 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+// import ProgressBar from './ProgressBar';
+import useInput from '../hooks/useInput';
+import useStorage from '../hooks/useStorage';
+import { projectFirestore, projectStorage } from '../firebase/config';
 
 export default function SubmitEvent() {
+    const { value:collection, bind:bindCollection, reset:resetCollection } = useInput('');
+    const { value:title, bind:bindTitle, reset:resetTitle } = useInput('');
+    const { value:startDT, bind:bindStartDT, reset:resetStartDT } = useInput('');
+    const { value:endDT, bind:bindEndDT, reset:resetEndDT } = useInput('');
+    const { value:location, bind:bindLocation, reset:resetLocation } = useInput('');
+    const { value:price, bind:bindPrice, reset:resetPrice } = useInput(0);
+    const { value:link, bind:bindLink, reset:resetLink } = useInput('');
+    // const { value:file, bind:bindFile, reset:resetFile } = useInput(null);
+    const [ file, setFile ] = useState(null);
+    const [ fileUrl, setFileUrl ] = useState('');
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        console.log(event)
+
+        var uploadTask = projectStorage.ref()
+                                .child('images/' + file.name)
+                                .put(file);
+        
+        uploadTask.on('state_changed',
+            (snapshot) => {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+            }, 
+            (error) => {
+                console.log(error)
+            }, 
+            () => {
+                uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                    setFileUrl(downloadURL)
+                    const collectionRef = projectFirestore.collection(collection);
+                    collectionRef.add({
+                        title, 
+                        startDT, 
+                        endDT, 
+                        location, 
+                        price, 
+                        link, 
+                        fileUrl,
+                        verified: false
+                    })
+                });
+            }
+        )
+
+        resetCollection();
+        resetTitle();
+        resetStartDT();
+        resetEndDT();
+        resetLocation();
+        resetPrice();
+        resetLink();
+        // resetFile();
+        setFile(null);
+        setFileUrl('');
+
+    };
 
     return (
         <div class="event-form container p-5">
@@ -9,11 +70,11 @@ export default function SubmitEvent() {
             <p> Once submitted, your event will be reviewed and verified by out team before posted. </p>
             <br/>
 
-            <form class="">
-                <div class="form-control collection">
+            <form class="" onSubmit={onSubmit}>
+                <div {...bindCollection} class="form-control collection">
                     <h2>City</h2>
                     <div class="">
-                        <input type="radio" id="miami" name="collection" value="miami" checked/>
+                        <input type="radio" id="miami" name="collection" value="miami"/>
                         <label for="miami">Miami</label>
                     </div>
 
@@ -26,47 +87,49 @@ export default function SubmitEvent() {
                         <input type="radio" id="berlin" name="collection" value="berlin"/>
                         <label for="berlin">Berlin</label>
                     </div>
-
                 </div>
 
                 <div class="form-control">
                     <label class="">Event Title</label>
-                    <input type="text" name="title" id="title" placeholder="Event Title" required></input>
+                    <input {...bindTitle} type="text" name="title" id="title" placeholder="Event Title" required></input>
                 </div>
 
                 <div class="form-control">
                     <label class="">Start Date & Time</label>
-                    <input type="datetime-local" name="start-dt" id="start-dt" required></input>
+                    <input {...bindStartDT} type="datetime-local" name="startDT" id="startDT" required></input>
                 </div>
 
                 <div class="form-control">
                     <label class="">End Date & Time</label>
-                    <input type="datetime-local" name="end-dt" id="end-dt" required></input>
+                    <input {...bindEndDT} type="datetime-local" name="endDT" id="endDT" required></input>
                 </div>
 
                 <div class="form-control">
                     <label class="">Location</label>
-                    <input type="textbox" name="location" id="location" placeholder="Location" equired></input>
+                    <input {...bindLocation} type="textbox" name="location" id="location" placeholder="Location" required></input>
                 </div>
 
                 <div class="form-control">
                     <label class="">Event Price</label>
-                    <input type="number" min="0" name="price" id="price" placeholder="Price" required></input>
+                    <input {...bindPrice} type="number" min="0" name="price" id="price" placeholder="Price" required></input>
                 </div>
 
                 <div class="form-contol">
                     <label class="">Link to Event Details</label>
-                    <input type="url" name="link" id="link" placeholder="Event Link" required></input>
+                    <input {...bindLink} type="url" name="link" id="link" placeholder="Event Link" required></input>
                 </div>
 
                 <div class="form-control">
                     <label class="">Event Thumbnail</label>
-                    <input type="file" name="img" id="img" accept=".jpg, .jpeg, .png" placeholder="Event Thumbnail" required></input>
+                    <input onChange={(e) => setFile(e.target.files[0])}
+                        type="file" name="img" id="img" accept=".jpg, .jpeg, .png" placeholder="Event Thumbnail" required></input>
                 </div>
 
                 <input type="submit" value="Submit" class="btn"></input>
 
             </form>
+
+            {/* { file && <ProgressBar file={file} setFileUrl={setFileUrl} /> } */}
 
         </div>
     );
