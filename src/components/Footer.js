@@ -6,11 +6,13 @@ export default function Footer() {
     return (
         <div class="footer py-5">
             <div class="container grid grid-3">
-                <div>
-                    <h2 class="l-txt md">Blockchain Summer 2021</h2>
-                    <p class="l-txt">Copyright &copy; 2021</p>
+                <div class="info">
+                    <div>    
+                        <h2 class="l-txt md">Blockchain Summer 2021</h2>
+                        <p class="l-txt">Copyright &copy; 2021</p>
+                    </div>
 
-                    <a href="https://twitter.com/JiyounyK" class=""><i class="fab fa-twitter fa-2x "></i></a>
+                    <a href="https://twitter.com/JiyounyK" class="icon"><i class="fab fa-twitter fa-2x "></i></a>
                 </div>
 
                 <div></div>
