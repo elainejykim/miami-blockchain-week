@@ -1,6 +1,5 @@
 import React from 'react';
 import EventCard from "./EventCard";
-import ComingSoon from "./ComingSoon";
 import useFirestore from '../hooks/useFirestore';
 
 export default function Events({
@@ -10,12 +9,12 @@ export default function Events({
     console.log(docs);
 
     return (
-        {docs ? <section class="events-list">
+        <section class="events-list">
             <div class="container">
 
                 <h1 class="title flex">Miami</h1>
 
-                {docs.map((doc) => 
+                {docs && docs.map((doc) => 
                     <EventCard 
                         key={doc.id}
                         title={doc.title}
@@ -29,8 +28,6 @@ export default function Events({
                 )}
 
             </div>
-        </section> : <ComingSoon/}
-
-
+        </section>
     );
 }
