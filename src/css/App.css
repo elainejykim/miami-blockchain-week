@@ -94,6 +94,11 @@ img {
   min-height: 160px;
 }
 
+.event.grid.card:hover {
+  border: 2px solid var(--success-color);
+  
+}
+
 .event-img {
   grid-column: 1 / span 2;
   border: 1px solid #333;

@@ -20,46 +20,43 @@ export default function SubmitEvent() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(
-            collection,
-            title, 
-            startDT, 
-            endDT, 
-            location, 
-            price, 
-            link, 
-            file,
-        );
+        console.log("SUBMITTING")
 
-        // var uploadTask = projectStorage.ref()
-        //                         .child('images/' + file.name)
-        //                         .put(file);
+        var uploadTask = projectStorage.ref()
+                                .child('images/' + file.name)
+                                .put(file);
         
-        // uploadTask.on('state_changed',
-        //     (snapshot) => {
-        //         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        //         console.log('Upload is ' + progress + '% done');
-        //     }, 
-        //     (error) => {
-        //         console.log(error)
-        //     }, 
-        //     () => {
-        //         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-        //             setFileUrl(downloadURL)
-        //             const collectionRef = projectFirestore.collection(collection);
-        //             collectionRef.add({
-        //                 title, 
-        //                 startDT, 
-        //                 endDT, 
-        //                 location, 
-        //                 price, 
-        //                 link, 
-        //                 fileUrl,
-        //                 verified: false
-        //             })
-        //         });
-        //     }
-        // )
+        uploadTask.on('state_changed', (snapshot) => {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+            }, (error) => {
+                console.log(error)
+            }, async () => {
+                const url = await uploadTask.snapshot.ref.getDownloadURL();
+                console.log("awaiting? ");
+                setFileUrl(url);
+
+                const collectionRef = projectFirestore.collection(collection);
+
+                if (link === '') {
+                    console.log("SOMETHING FAILED");
+                    return ;
+                }
+
+                collectionRef.add({
+                    title, 
+                    startDT, 
+                    endDT, 
+                    location, 
+                    price, 
+                    link, 
+                    fileUrl,
+                    verified: false
+                })
+
+                console.log("end of function reached");
+            }
+        );
 
         resetCollection();
         resetTitle();
@@ -71,7 +68,6 @@ export default function SubmitEvent() {
         // resetFile();
         setFileName("");
         setFile(null);
-        
         setFileUrl('');
 
     };

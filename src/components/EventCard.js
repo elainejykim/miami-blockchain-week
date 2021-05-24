@@ -10,6 +10,7 @@ export default function EventCard({
     imgUrl
 }) {
     return (
+        <a href={link}>
         <div class="event grid card">
             <div class="event-img">
                 <img src={imgUrl} alt="Event Thumbnail"/>
@@ -25,6 +26,7 @@ export default function EventCard({
                 </div>
             </div>
         </div>
+        </a>
     )
 }
 
