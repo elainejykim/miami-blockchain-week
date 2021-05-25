@@ -12,7 +12,7 @@ export default function Events({
         <section class="events-list">
             <div class="container">
 
-                <h1 class="title flex">Miami</h1>
+                <h1 class="title flex">Miami Edition</h1>
 
                 {docs && docs.map((doc) => 
                     <EventCard 
