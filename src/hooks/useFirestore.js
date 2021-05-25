@@ -6,6 +6,7 @@ const useFirestore = (collection) => {
 
     useEffect(() => {
         const unsub = projectFirestore.collection(collection)
+            .where("verified", "==", true)
             .onSnapshot((snap) => {
                 let documents = [];
                 snap.forEach(doc => {

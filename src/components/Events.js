@@ -23,7 +23,7 @@ export default function Events({
                         location={doc.location}
                         price={doc.price}
                         link={doc.link}
-                        imgUrl={doc.fileUrl}
+                        imgUrl={doc.url}
                     />
                 )}
 

@@ -12,16 +12,19 @@ export default function SubmitEvent() {
     const { value:location, bind:bindLocation, reset:resetLocation } = useInput('');
     const { value:price, bind:bindPrice, reset:resetPrice } = useInput(0);
     const { value:link, bind:bindLink, reset:resetLink } = useInput('');
-    // const { value:file, bind:bindFile, reset:resetFile } = useInput(null);
 
-    const [ fileName, setFileName ] = useState("");
+    const [ fileName, setFileName ] = useState('');
     const [ file, setFile ] = useState(null);
     const [ fileUrl, setFileUrl ] = useState('');
 
     const onSubmit = (event) => {
         event.preventDefault();
         console.log("SUBMITTING")
+        
+        const { fieldset } = event.target.elements;
+        fieldset.disabled = true;
 
+        //const storageRef = projectStorage.ref();
         var uploadTask = projectStorage.ref()
                                 .child('images/' + file.name)
                                 .put(file);
@@ -33,16 +36,11 @@ export default function SubmitEvent() {
                 console.log(error)
             }, async () => {
                 const url = await uploadTask.snapshot.ref.getDownloadURL();
-                console.log("awaiting? ");
-                setFileUrl(url);
+                console.log("URL: ", url);
+                // setFileUrl(url);
+                // console.log("File URL: ", fileUrl);
 
                 const collectionRef = projectFirestore.collection(collection);
-
-                if (link === '') {
-                    console.log("SOMETHING FAILED");
-                    return ;
-                }
-
                 collectionRef.add({
                     title, 
                     startDT, 
@@ -50,14 +48,19 @@ export default function SubmitEvent() {
                     location, 
                     price, 
                     link, 
-                    fileUrl,
-                    verified: false
-                })
+                    url,
+                    verified: true
+                }).then(()=> resetState());
 
-                console.log("end of function reached");
+                fieldset.disabled = false;
+                console.log("end of function reached and url rn is ", url);
             }
         );
 
+    };
+
+    const resetState = () => {
+        console.log("resetting state");
         resetCollection();
         resetTitle();
         resetStartDT();
@@ -68,9 +71,8 @@ export default function SubmitEvent() {
         // resetFile();
         setFileName("");
         setFile(null);
-        setFileUrl('');
-
-    };
+        // setFileUrl('');
+    }
 
     return (
         <div class="event-form container p-5">
@@ -79,7 +81,8 @@ export default function SubmitEvent() {
             <p> Once submitted, your event will be reviewed and verified by out team before posted. </p>
             <br/>
 
-            <form class="" onSubmit={onSubmit}>
+            <form class="" onSubmit={onSubmit} >
+                <fieldset id="fieldset">
                 <div {...bindCollection} class="form-control collection">
                     <h2>City</h2>
                     <div class="">
@@ -143,10 +146,8 @@ export default function SubmitEvent() {
                 </div>
 
                 <input type="submit" value="Submit" class="btn"></input>
-
+                </fieldset>
             </form>
-
-            {/* { file && <ProgressBar file={file} setFileUrl={setFileUrl} /> } */}
 
         </div>
     );

@@ -4,6 +4,9 @@
 [X] resize again for mobile
 [] Subscribe + form success notification
 [X] link event card
+[] DateTime prettify
+[] Pagination
+[] DateTime filtering
 
 FORM
 [X] !! Form collections radio doesn't 'unselect' although state is cleared to null
