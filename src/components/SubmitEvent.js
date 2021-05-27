@@ -13,9 +13,9 @@ export default function SubmitEvent() {
     const { value:price, bind:bindPrice, reset:resetPrice } = useInput(0);
     const { value:link, bind:bindLink, reset:resetLink } = useInput('');
 
+    const [ inviteOnly, setInviteOnly] = useState(false);
     const [ fileName, setFileName ] = useState('');
     const [ file, setFile ] = useState(null);
-    const [ fileUrl, setFileUrl ] = useState('');
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +24,6 @@ export default function SubmitEvent() {
         const { fieldset } = event.target.elements;
         fieldset.disabled = true;
 
-        //const storageRef = projectStorage.ref();
         var uploadTask = projectStorage.ref()
                                 .child('images/' + file.name)
                                 .put(file);
@@ -37,8 +36,6 @@ export default function SubmitEvent() {
             }, async () => {
                 const url = await uploadTask.snapshot.ref.getDownloadURL();
                 console.log("URL: ", url);
-                // setFileUrl(url);
-                // console.log("File URL: ", fileUrl);
 
                 const collectionRef = projectFirestore.collection(collection);
                 collectionRef.add({
@@ -48,8 +45,9 @@ export default function SubmitEvent() {
                     location, 
                     price, 
                     link, 
+                    inviteOnly,
                     url,
-                    verified: true
+                    verified: false
                 }).then(()=> resetState());
 
                 fieldset.disabled = false;
@@ -68,10 +66,10 @@ export default function SubmitEvent() {
         resetLocation();
         resetPrice();
         resetLink();
-        // resetFile();
+
+        setInviteOnly(false);
         setFileName("");
         setFile(null);
-        // setFileUrl('');
     }
 
     return (
@@ -126,9 +124,17 @@ export default function SubmitEvent() {
                     <input {...bindPrice} type="number" min="0" name="price" id="price" placeholder="Price" required></input>
                 </div>
 
-                <div class="form-contol">
+                <div class="form-control">
                     <label class="">Link to Event Details</label>
                     <input {...bindLink} type="url" name="link" id="link" placeholder="Event Link" required></input>
+                </div>
+
+                <div class="form-control">
+                    <label for="inviteOnly">Invite Only</label>
+                    <input type="checkbox" id="inviteOnly" name="inviteOnly"
+                        onChange={() => setInviteOnly(!inviteOnly)}
+                        checked={inviteOnly}
+                    />
                 </div>
 
                 <div class="form-control">

@@ -7,8 +7,20 @@ export default function EventCard({
     location,
     price,
     link,
+    inviteOnly,
     imgUrl
 }) {
+
+    const dateFormat = (date) => {
+        var src = /^(\d{4})-(\d{2})-(\d{2})T(.*)$/;
+        var d = '$2/$3';
+        var t = '$4';
+        return [date.replace(src, d), date.replace(src, t)];
+    }
+
+    const [startD, startT] = dateFormat(startDT);
+    const [endD, endT] = dateFormat(startDT);
+
     return (
         <a href={link}>
         <div class="event grid card">
@@ -17,37 +29,18 @@ export default function EventCard({
             </div>
             <div class="event-info">
                 <div class="event-info-top"><p>
-                    {startDT} - {endDT} 
+                    {startD} {startT} - {endD} {endT}
                 </p></div>
                 <h1> {title} </h1>
                 <div class="event-info-bottom">  
                     <p> {location} </p>
-                    <p> ${price} </p>
+                    <div class="flex">
+                        <p> {price === 0? "FREE" : "$" + price} </p>
+                        <p> {inviteOnly && "*Invite Only"} </p>
+                    </div>
                 </div>
             </div>
         </div>
         </a>
     )
 }
-
-// export default function EventCard({
-//     title, date, time, location, price, img
-// }) {
-//     return (
-//         <div class="event grid card">
-//             <div class="event-img">
-//                 <img src={process.env.PUBLIC_URL + "/img/" + img} alt="Event Thumbnail"/>
-//             </div>
-//             <div class="event-info">
-//                 <div class="event-info-top"><p>
-//                     {date} - {time} 
-//                 </p></div>
-//                 <h1> {title} </h1>
-//                 <div class="event-info-bottom">  
-//                     <p> {location} </p>
-//                     <p> {price} </p>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }

@@ -23,6 +23,7 @@ export default function Events({
                         location={doc.location}
                         price={doc.price}
                         link={doc.link}
+                        inviteOnly={doc.inviteOnly}
                         imgUrl={doc.url}
                     />
                 )}

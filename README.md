@@ -7,6 +7,7 @@
 [] DateTime prettify
 [] Pagination
 [] DateTime filtering
+[] link opens externally
 
 FORM
 [X] !! Form collections radio doesn't 'unselect' although state is cleared to null
