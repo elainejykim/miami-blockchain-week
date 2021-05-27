@@ -19,10 +19,10 @@ export default function EventCard({
     }
 
     const [startD, startT] = dateFormat(startDT);
-    const [endD, endT] = dateFormat(startDT);
+    const [endD, endT] = dateFormat(endDT);
 
     return (
-        <a href={link}>
+        <a href={link ? link : "javascript:;"}>
         <div class="event grid card">
             <div class="event-img">
                 <img src={imgUrl} alt="Event Thumbnail"/>

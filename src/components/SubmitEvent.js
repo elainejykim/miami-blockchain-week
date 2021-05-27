@@ -126,7 +126,7 @@ export default function SubmitEvent() {
 
                 <div class="form-control">
                     <label class="">Link to Event Details</label>
-                    <input {...bindLink} type="url" name="link" id="link" placeholder="Event Link" required></input>
+                    <input {...bindLink} type="url" name="link" id="link" placeholder="Event Link" ></input>
                 </div>
 
                 <div class="form-control">
