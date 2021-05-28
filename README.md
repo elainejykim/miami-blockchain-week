@@ -4,10 +4,22 @@
 [X] resize again for mobile
 [] Subscribe + form success notification
 [X] link event card
-[] DateTime prettify
+[X] DateTime prettify
 [] Pagination
 [] DateTime filtering
+[] Unknown "time?" no event photo?
 [] link opens externally
+[] Unknown date times
+[] Memes and fun content inbetween
+[] buy ad space with NEAR??????
+[] Play with alignment on “submit an event” form, something like this: https://dribbble.com/shots/11976378-himalayas-app-admin-job-listing-concept/attachments/3604236?mode=media
+[] Header fill color black
+[] Event cards wider
+[] Emphasize the price and “Invite only” caption
+[] Add the contrast to buttons 
+
+
+
 
 FORM
 [X] !! Form collections radio doesn't 'unselect' although state is cleared to null
