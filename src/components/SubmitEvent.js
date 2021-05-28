@@ -5,14 +5,10 @@ import useInput from '../hooks/useInput';
 import { projectFirestore, projectStorage } from '../firebase/config';
 import firebase from 'firebase/app';
 
-
 export default function SubmitEvent() {
     const { value:collection, bind:bindCollection, reset:resetCollection } = useInput(null);
     const { value:title, bind:bindTitle, reset:resetTitle } = useInput('');
-
-    const [ startDT, setStartDT ] = useState(null);
-
-    // const { value:startDT, bind:bindStartDT, reset:resetStartDT } = useInput('');
+    const { value:startDT, bind:bindStartDT, reset:resetStartDT } = useInput('');
     const { value:endDT, bind:bindEndDT, reset:resetEndDT } = useInput('');
     const { value:location, bind:bindLocation, reset:resetLocation } = useInput('');
     const { value:price, bind:bindPrice, reset:resetPrice } = useInput(0);
@@ -22,10 +18,19 @@ export default function SubmitEvent() {
     const [ fileName, setFileName ] = useState('');
     const [ file, setFile ] = useState(null);
 
+    const offsetsUTC = {
+        'miami': '-04:00',
+        'paris': '+02:00',
+        'berlin': '+02:00'
+    }
 
     const toTimestamp = (dt) => {
-        const ts = new firebase.firestore.Timestamp(dt);
-        console.log(ts);
+        const d = new Date(dt + offsetsUTC[collection])
+        const ts = new firebase.firestore.Timestamp.fromDate(d);
+        console.log("original: ", dt);
+        console.log("date: ", d);
+        console.log("timestamp: ", ts);
+        return ts;
     };
 
     const onSubmit = (event) => {
@@ -58,7 +63,8 @@ export default function SubmitEvent() {
                     link, 
                     inviteOnly,
                     url,
-                    verified: false
+                    verified: false,
+                    startTimestamp: toTimestamp(startDT)
                 }).then(()=> resetState());
 
                 fieldset.disabled = false;
@@ -72,8 +78,8 @@ export default function SubmitEvent() {
         console.log("resetting state");
         resetCollection();
         resetTitle();
-        // resetStartDT();
-        setStartDT(null);
+        
+        resetStartDT();
         resetEndDT();
         resetLocation();
         resetPrice();
@@ -118,11 +124,10 @@ export default function SubmitEvent() {
 
                 <div class="form-control">
                     <label class="">Start Date & Time</label>
-                    <input onChange={(e) => {
-                        console.log(e.target.value);
-                        setStartDT(toTimestamp(e.target.value));
-                        console.log(startDT);
-                        }} type="datetime-local" name="startDT" id="startDT" required></input>
+                    <input 
+                        {...bindStartDT}
+                        type="datetime-local" name="startDT" id="startDT" required
+                    ></input>
                 </div>
 
                 <div class="form-control">
@@ -174,3 +179,4 @@ export default function SubmitEvent() {
         </div>
     );
 }
+

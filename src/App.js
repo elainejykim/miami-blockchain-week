@@ -17,7 +17,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={() => <Events collection="miami"/>} />
           <Route path="/miami" exact component={() => <Events collection="miami"/>} />
-          <Route path="/paris" exact component={() => <ComingSoon />} />
+          <Route path="/paris" exact component={() => <Events collection="paris"/>} />
           <Route path="/berlin" exact component={() => <ComingSoon />} />
           <Route path="/submit-event" exact component={() => <SubmitEvent />} />
         </Switch>
