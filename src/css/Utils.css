@@ -30,6 +30,8 @@
 
 .btn:hover {
   transform: scale(0.98);
+  border: 1px solid #00C08B;
+  color: #00C08B;
 }
 
 .title {
@@ -79,6 +81,10 @@ margin: 3rem 0;
 .my-5 {
 margin: 4rem 0;
 }
+
+.my-6 {
+    margin: 6rem 0;
+    }
 
 .m-1 {
 margin: 1rem;
@@ -158,10 +164,6 @@ padding: 4rem;
     color: #FF585D;
 }
 
-.bold {
-    font-weight: bold;
-}
-
 .dark-background {
     background-color: #333;
 }
@@ -189,4 +191,16 @@ font-size: 4rem;
 
 .text-center {
 text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
 }

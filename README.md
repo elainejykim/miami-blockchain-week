@@ -10,10 +10,10 @@
 - [--] Unknown "time?" no event photo?
 - [X] link opens externall
 - [] Play with alignment on “submit an event” form, something like this: https://dribbble.com/shots/11976378-himalayas-app-admin-job-listing-concept/attachments/3604236?mode=media
-- [] Header fill color black
+- [X] Header fill color black
 - [patched] Event cards wider
 - [X] Emphasize the price and “Invite only” caption
-- [] Add the contrast to buttons 
+- [--] Add the contrast to buttons 
 - [X] Subscription
 - [] Um images take up too much space, quota exceeded
 - [] FORM didn't use any of the hooks atm. need cleaning.

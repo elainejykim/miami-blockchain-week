@@ -162,6 +162,10 @@ fieldset {
   color: #fff;
 }
 
+.footer .btn:hover a{
+  color: #00C08B;
+}
+
 .footer .card {
   background-color: #333;
   border: none;
@@ -208,8 +212,13 @@ fieldset {
 
 /* Coming soon */
 .coming-soon .btn {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
+.coming-soon .btn:hover a{
+  margin-top: 4rem;
+  color: #00C08B;
+}
+
 
 
 /* Tablets and under */

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-export default function ComingSoon() {
+export default function ComingSoon({
+    collection
+}) {
     return (
         <div className="coming-soon">
             <div className="container p-4">
-                <h1 className="lg">
-                    COMING SOON!
-                </h1>
+
+                <h2 className="lg my-1"> 
+                    <span className="uppercase bold"> {collection} </span> - Coming Soon!
+                </h2>
 
                 <h2 className="d-txt md">
                     In the meantime... 

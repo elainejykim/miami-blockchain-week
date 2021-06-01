@@ -18,8 +18,8 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={() => <Events collection="miami"/>} />
           <Route path="/miami" exact component={() => <Events collection="miami"/>} />
-          <Route path="/paris" exact component={() => <Events collection="paris"/>} />
-          <Route path="/berlin" exact component={() => <ComingSoon />} />
+          <Route path="/paris" exact component={() => <ComingSoon collection="paris"/>} />
+          <Route path="/berlin" exact component={() => <ComingSoon collection="berlin"/>} />
           <Route path="/submit-event" exact component={() => <SubmitEvent />} />
           <Route path="/subscribe" exact component={() => <SubscribeForm />} />
         </Switch>
