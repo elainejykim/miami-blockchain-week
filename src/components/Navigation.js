@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export default function Navigation() {
     return (
-        <div class="navbar">
-            <div class="container flex"> 
-                <h1 class="logo">
+        <div className="navbar">
+            <div className="container flex"> 
+                <h1 className="logo">
                     <Link to="/">Blockchain Summer 2021</Link>
                 </h1>
                 <nav>

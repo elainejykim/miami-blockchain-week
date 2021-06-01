@@ -150,6 +150,18 @@ padding: 4rem;
     color: #fff;
 }
 
+.blue-txt {
+    color: #00C1DE;
+}
+
+.red-txt {
+    color: #FF585D;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .dark-background {
     background-color: #333;
 }

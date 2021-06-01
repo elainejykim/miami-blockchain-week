@@ -22,21 +22,21 @@ export default function EventCard({
     const [endD, endT] = dateFormat(endDT);
 
     return (
-        <a href={link ? link : "javascript:;"}>
-        <div class="event grid card">
-            <div class="event-img">
+        <a href={link ? link : ""} target="_blank" rel="noopener noreferrer">
+        <div className="event grid card">
+            <div className="event-img">
                 <img src={imgUrl} alt="Event Thumbnail"/>
             </div>
-            <div class="event-info">
-                <div class="event-info-top"><p>
+            <div className="event-info">
+                <div className="event-info-top"><p>
                     {startD} {startT} - {endD} {endT}
                 </p></div>
                 <h1> {title} </h1>
-                <div class="event-info-bottom">  
+                <div className="event-info-bottom">  
                     <p> {location} </p>
-                    <div class="flex">
-                        <p> {price === 0? "FREE" : "$" + price} </p>
-                        <p> {inviteOnly && "*Invite Only"} </p>
+                    <div className="flex">
+                        <p class="blue-txt bold"> {price === 0? "FREE" : "$" + price} </p>
+                        <p class="red-txt bold"> {inviteOnly && "*Invite Only"} </p>
                     </div>
                 </div>
             </div>

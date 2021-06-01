@@ -56,14 +56,15 @@ fieldset {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  background-color: white;
-  height: 90px;
+  background-color: rgb(24, 24, 24);
+  height: 70px;
   border-bottom: 1px solid #333;
 }
 
-.navbar .logo {
+.navbar .logo a{
   text-transform: uppercase;
-  font-size: 3vw;
+  font-size: 2.5vw;
+  color: white;
 }
 
 .navbar ul {
@@ -71,7 +72,7 @@ fieldset {
 }
 
 .navbar nav a {
-  color: #333;
+  color: #fff;
   padding: 10px;
   margin: 0 5px;
   font-family: "Roboto Mono";
@@ -92,7 +93,7 @@ fieldset {
 
 /* Events */
 .events-list .container{
-  width: 600px;
+  width: 768px;
 }
 
 .event {
@@ -170,8 +171,21 @@ fieldset {
   color: white;
   padding-top: 2rem;
 }
-/* subscribe */
 
+/* Subscription Form */
+.mergeTable .mergeRow {
+  display: flex;
+  margin: 30px 0;
+}
+
+.mergeTable .mergeRow input {
+  border: 0;
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 0 2rem;
+}
+
+/* subscribe */
 .subscription-form input[type="email"] {
   border: 1px solid #fff;
   width: 100%;

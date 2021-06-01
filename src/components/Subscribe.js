@@ -11,15 +11,14 @@ export default function Subscribe() {
         if (email != null) {
             collectionRef.add({email});
             setEmail("");
-            // console.log("email pushed on: ", docRef);
         }
     };
 
     return (
-        <div class="subscription-form">
-            <h2 class="l-txt sm">Subscribe</h2>
-            <form class="flex" onSubmit={onFormSubmit}>
-                <div class="form-control">
+        <div className="subscription-form">
+            <h2 className="l-txt sm">Subscribe</h2>
+            <form className="flex" onSubmit={onFormSubmit}>
+                <div className="form-control">
                     <input 
                         type="email" 
                         name="email" 
@@ -30,7 +29,7 @@ export default function Subscribe() {
                         required
                     />
                 </div>
-                <button type="submit" class="btn m-1"><i class="fas fa-arrow-right"></i></button>
+                <button type="submit" className="btn m-1"><i className="fas fa-arrow-right"></i></button>
             </form>
         </div>
     );

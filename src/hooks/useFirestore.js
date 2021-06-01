@@ -6,7 +6,7 @@ const useFirestore = (collection) => {
 
     useEffect(() => {
         const unsub = projectFirestore.collection(collection)
-            .orderBy("startTimestamp")
+            .orderBy("startDT", "asc")
             .where("verified", "==", true)
             .onSnapshot((snap) => {
                 let documents = [];
@@ -22,37 +22,5 @@ const useFirestore = (collection) => {
 
     return { docs }
 }
-
-// const PushFirestore = (email) => {
-//     const [docRef, setDocRef] = useState(null);
-//     const [error, setError] = useState(null);
-
-//     const collectionRef = projectFirestore.collection('emails');
-
-//     collectionRef.add({email})
-//         .then((docRef) => {
-//             setDocRef(docRef);
-//         }).catch((error) => {
-//             setError(error);
-//         });
-
-//     return {docRef, error}
-// }
-
-// const PushFirestore = (collectionName, data) => {
-//     const [docRef, setDocRef] = useState(null);
-//     const [error, setError] = useState(null);
-
-//     const collectionRef = projectFirestore.collection(collectionName);
-
-//     collectionRef.add(data)
-//         .then((docRef) => {
-//             setDocRef(docRef);
-//         }).catch((error) => {
-//             setError(error);
-//         });
-
-//     return {docRef, error}
-// }
 
 export default useFirestore;

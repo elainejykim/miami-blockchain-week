@@ -6,13 +6,12 @@ export default function Events({
     collection
 }) {
     const { docs } = useFirestore(collection);
-    console.log(docs);
 
     return (
-        <section class="events-list">
-            <div class="container">
+        <section className="events-list">
+            <div className="container">
 
-                <h1 class="title flex">Miami Edition</h1>
+                <h1 className="title flex">Miami Edition</h1>
 
                 {docs && docs.map((doc) => 
                     <EventCard 

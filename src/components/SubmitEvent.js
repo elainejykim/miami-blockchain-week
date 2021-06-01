@@ -3,7 +3,6 @@ import React, {useState } from 'react';
 import useInput from '../hooks/useInput';
 // import useStorage from '../hooks/useStorage';
 import { projectFirestore, projectStorage } from '../firebase/config';
-import firebase from 'firebase/app';
 
 export default function SubmitEvent() {
     const { value:collection, bind:bindCollection, reset:resetCollection } = useInput(null);
@@ -18,20 +17,20 @@ export default function SubmitEvent() {
     const [ fileName, setFileName ] = useState('');
     const [ file, setFile ] = useState(null);
 
-    const offsetsUTC = {
-        'miami': '-04:00',
-        'paris': '+02:00',
-        'berlin': '+02:00'
-    }
+    // const offsetsUTC = {
+    //     'miami': '-04:00',
+    //     'paris': '+02:00',
+    //     'berlin': '+02:00'
+    // }
 
-    const toTimestamp = (dt) => {
-        const d = new Date(dt + offsetsUTC[collection])
-        const ts = new firebase.firestore.Timestamp.fromDate(d);
-        console.log("original: ", dt);
-        console.log("date: ", d);
-        console.log("timestamp: ", ts);
-        return ts;
-    };
+    // const toTimestamp = (dt) => {
+    //     const d = new Date(dt + offsetsUTC[collection])
+    //     const ts = new firebase.firestore.Timestamp.fromDate(d);
+    //     console.log("original: ", dt);
+    //     console.log("date: ", d);
+    //     console.log("timestamp: ", ts);
+    //     return ts;
+    // };
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -64,11 +63,10 @@ export default function SubmitEvent() {
                     inviteOnly,
                     url,
                     verified: false,
-                    startTimestamp: toTimestamp(startDT)
+                    // startTimestamp: toTimestamp(startDT)
                 }).then(()=> resetState());
 
                 fieldset.disabled = false;
-                console.log("end of function reached and url rn is ", url);
             }
         );
 
@@ -91,22 +89,22 @@ export default function SubmitEvent() {
     }
 
     return (
-        <div class="event-form container p-5">
+        <div className="event-form container p-5">
 
-            <h2 class="lg"> Submit an Event </h2>
+            <h2 className="lg"> Submit an Event </h2>
             <p> Once submitted, your event will be reviewed and verified by out team before posted. </p>
             <br/>
 
-            <form class="" onSubmit={onSubmit} >
+            <form className="" onSubmit={onSubmit} >
                 <fieldset id="fieldset">
-                <div {...bindCollection} class="form-control collection">
+                <div {...bindCollection} className="form-control collection">
                     <h2>City</h2>
-                    <div class="">
+                    <div className="">
                         <input type="radio" id="miami" name="collection" value="miami" checked={collection === 'miami'}/>
                         <label for="miami">Miami</label>
                     </div>
 
-                    <div class="">
+                    <div className="">
                         <input type="radio" id="paris" name="collection" value="paris" checked={collection === 'paris'}/>
                         <label for="paris">Paris</label>
                     </div>
@@ -117,40 +115,40 @@ export default function SubmitEvent() {
                     </div>
                 </div>
 
-                <div class="form-control">
-                    <label class="">Event Title</label>
+                <div className="form-control">
+                    <label className="">Event Title</label>
                     <input {...bindTitle} type="text" name="title" id="title" placeholder="Event Title" required></input>
                 </div>
 
-                <div class="form-control">
-                    <label class="">Start Date & Time</label>
+                <div className="form-control">
+                    <label className="">Start Date & Time</label>
                     <input 
                         {...bindStartDT}
                         type="datetime-local" name="startDT" id="startDT" required
                     ></input>
                 </div>
 
-                <div class="form-control">
-                    <label class="">End Date & Time</label>
+                <div className="form-control">
+                    <label className="">End Date & Time</label>
                     <input {...bindEndDT} type="datetime-local" name="endDT" id="endDT" required></input>
                 </div>
 
-                <div class="form-control">
-                    <label class="">Location</label>
+                <div className="form-control">
+                    <label className="">Location</label>
                     <input {...bindLocation} type="textbox" name="location" id="location" placeholder="Location" required></input>
                 </div>
 
-                <div class="form-control">
-                    <label class="">Event Price</label>
+                <div className="form-control">
+                    <label className="">Event Price</label>
                     <input {...bindPrice} type="number" min="0" name="price" id="price" placeholder="Price" required></input>
                 </div>
 
-                <div class="form-control">
-                    <label class="">Link to Event Details</label>
+                <div className="form-control">
+                    <label className="">Link to Event Details</label>
                     <input {...bindLink} type="url" name="link" id="link" placeholder="Event Link" ></input>
                 </div>
 
-                <div class="form-control">
+                <div className="form-control">
                     <label for="inviteOnly">Invite Only</label>
                     <input type="checkbox" id="inviteOnly" name="inviteOnly"
                         onChange={() => setInviteOnly(!inviteOnly)}
@@ -158,8 +156,8 @@ export default function SubmitEvent() {
                     />
                 </div>
 
-                <div class="form-control">
-                    <label class="">Event Thumbnail</label>
+                <div className="form-control">
+                    <label className="">Event Thumbnail</label>
                     <input 
                         onChange={ (e) => {
                             setFile(e.target.files[0]);
@@ -172,7 +170,7 @@ export default function SubmitEvent() {
                     ></input>
                 </div>
 
-                <input type="submit" value="Submit" class="btn"></input>
+                <input type="submit" value="Submit" className="btn"></input>
                 </fieldset>
             </form>
 
