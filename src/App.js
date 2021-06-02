@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import ComingSoon from './components/ComingSoon';
 import SubmitEvent from './components/SubmitEvent';
 import SubscribeForm from './components/SubscribeForm';
+import ScrollToTop from './hooks/scrollToTop';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -15,6 +16,7 @@ const App = () => {
       <Router>  
         <Navigation/>
 
+        <ScrollToTop />
         <Switch>
           <Route path="/" exact component={() => <Events collection="miami"/>} />
           <Route path="/miami" exact component={() => <Events collection="miami"/>} />

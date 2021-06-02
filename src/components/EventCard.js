@@ -35,8 +35,8 @@ export default function EventCard({
                 <div className="event-info-bottom">  
                     <p> {location} </p>
                     <div className="flex">
-                        <p class="blue-txt bold"> {price === 0? "FREE" : "$" + price} </p>
-                        <p class="red-txt bold"> {inviteOnly && "*Invite Only"} </p>
+                        <p className="blue-txt bold"> {price === 0? "FREE" : "$" + price} </p>
+                        <p className="red-txt bold"> {inviteOnly && "*Invite Only"} </p>
                     </div>
                 </div>
             </div>
