@@ -17,6 +17,8 @@
 - [X] Subscription
 - [] Um images take up too much space, quota exceeded
 - [] FORM didn't use any of the hooks atm. need cleaning.
+- [] SUBSCRIPTION ERROR ON SAFARI. https://brianhogg.com/avoid-mailchimp-too-many-attempts-signup-error/
+
 
 Back burner
 [] Memes and fun content inbetween
