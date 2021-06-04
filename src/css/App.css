@@ -246,17 +246,17 @@ fieldset {
   }
 
   /* Navbar */
-  svg:hover {
+  .navbar svg:hover {
     background-color:rgba(255,255,255,0.1);
     border-radius:50%;
     box-shadow: 0 0 0 7px rgba(255,255,255,0.1);
   }
 
-  nav {
+  .navbar nav {
     background-color: rgb(24, 24, 24);
   }
 
-  nav ul {
+  .navbar nav ul {
       display: flex;
       justify-content: space-between;
   }
