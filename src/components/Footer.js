@@ -1,43 +1,28 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import logoWhite from "../assets/logo-white.svg";
 
 export default function Footer() {
     return (
-        <div className="footer py-5">
-            <div className="container grid grid-3">
+        <div className="footer">
+            <div className="container footer-grid">
                 <div className="info">
                     <div>    
-                        <h2 className="l-txt md">Blockchain Summer 2021</h2>
-                        <p className="l-txt">Copyright &copy; 2021</p>
+                        <img className="logo" src={logoWhite} alt="logo"/>
+                        <p className="copyright">Copyright &copy; 2021</p>
                     </div>
-
-                    <a href="https://twitter.com/JiyounyK" className="icon"><i className="fab fa-twitter fa-2x "></i></a>
                 </div>
 
-                <div></div>
-
-                <div className="actions">
-
-                    <div>
-                        <h2 className="l-txt sm">
-                            Don't see your event?
-                        </h2>
-                        <button className="btn">
-                            <Link to="/submit-event">Submit Event</Link>
-                        </button>
-                    </div>
-
-                   <br/>
-
-                    <div>
-                        <h2 className="l-txt sm">
-                            Want to stay up to date?
-                        </h2>
-                        <button className="btn">
-                            <Link to="/subscribe">Subscribe</Link>
-                        </button>
-                    </div>
-
+                <div className="actions flex ">
+                    <a href="https://twitter.com/JiyounyK" className="icon">
+                        <i className="fab fa-twitter fa-1x "></i>
+                    </a>
+                    <button className="submit-btn btn">
+                        <Link to="/submit-event">Submit Event</Link>
+                    </button>
+                    <button className="subscribe-btn btn">
+                        <Link to="/subscribe">Subscribe to Newsletter</Link>
+                    </button>
                 </div>
             </div>
         </div>

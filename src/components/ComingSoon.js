@@ -6,7 +6,7 @@ export default function ComingSoon({
 }) {
     return (
         <div className="coming-soon">
-            <div className="container p-4">
+            <div className="container p-5">
 
                 <h2 className="lg my-1"> 
                     <span className="uppercase bold"> {collection} </span> - Coming Soon!

@@ -23,7 +23,8 @@ export default function EventCard({
 
     return (
         <a href={link ? link : ""} target="_blank" rel="noopener noreferrer">
-        <div className="event grid card">
+        
+        <div className="event event-grid card">
             <div className="event-img">
                 <img src={imgUrl} alt="Event Thumbnail"/>
             </div>
@@ -35,12 +36,13 @@ export default function EventCard({
                 <div className="event-info-bottom">  
                     <p> {location} </p>
                     <div className="flex">
-                        <p className="blue-txt bold"> {price === 0? "FREE" : "$" + price} </p>
+                        <p className="green-txt bold"> {price === 0? "FREE" : "$" + price} </p>
                         <p className="red-txt bold"> {inviteOnly && "*Invite Only"} </p>
                     </div>
                 </div>
             </div>
         </div>
+        
         </a>
     )
 }

@@ -1,3 +1,13 @@
+:root {
+    --green: #00C08B;
+    --blue: #00C1DE;
+    --royal: #0072CE;
+    --near-red: #FF585D;
+    --black: #24282B;
+  }
+  
+  
+
 /* Utilities */
 .container {
     max-width: 1100px;
@@ -15,50 +25,29 @@
 
 .card {
     background-color: #fff;
-    border: 1px solid #333;
-    padding: 20px;
+    border: 2px solid rgba(36, 40, 43, 0.2);
+    padding: 30px;
     margin: 10px;
 }
 
 .btn {
-    border: 1px solid #333;
+    border: 2px solid var(--black);
     padding: 0.5rem 1rem;
-    font-family: "Roboto Mono";
-    font-weight: bold;
     background-color: #fff;
+    font-weight: 600;
 }
 
 .btn:hover {
   transform: scale(0.98);
-  border: 1px solid #00C08B;
+  border: 2px solid #00C08B;
   color: #00C08B;
 }
 
 .title {
-font-weight: 500;
-text-transform: uppercase;
-font-size: 2.5em;
+font-weight: bold;
+font-size: 2em;
 margin-top: 4rem;
 margin-bottom: 2rem;
-}
-
-/* grids */
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    height: 100%
-}
-
-.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
 }
 
 /* Margin */
@@ -149,7 +138,7 @@ padding: 4rem;
 
 /* Color */
 .d-txt {
-    color: #333;
+    color: var(--black);
 }
 
 .l-txt{
@@ -164,8 +153,12 @@ padding: 4rem;
     color: #FF585D;
 }
 
+.green-txt {
+    color: var(--green);
+}
+
 .dark-background {
-    background-color: #333;
+    background-color: var(--black);
 }
 
 .light-background {

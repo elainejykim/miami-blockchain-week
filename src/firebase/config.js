@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
-require('firebase/performance');
+require('firebase/analytics');
 
 const firebaseConfig = {
     apiKey: "AIzaSyDLLrUlOkvZ_qXh0AGNpNVoUxa5RUNe46o",
@@ -16,10 +16,8 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Initialize Performance Monitoring and get a reference to the service
-var perf = firebase.performance();
-
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
+const analytics = firebase.analytics();
 
 export {projectStorage, projectFirestore};

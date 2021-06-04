@@ -5,7 +5,7 @@
 - [] Subscribe + form success notification
 - [X] link event card
 - [X] DateTime prettify
-- [] Pagination
+- [X] Pagination
 - [X] DateTime filtering
 - [--] Unknown "time?" no event photo?
 - [X] link opens externall
@@ -15,10 +15,13 @@
 - [X] Emphasize the price and “Invite only” caption
 - [--] Add the contrast to buttons 
 - [X] Subscription
-- [] Um images take up too much space, quota exceeded
+- [X] Um images take up too much space, quota exceeded
 - [] FORM didn't use any of the hooks atm. need cleaning.
 - [] SUBSCRIPTION ERROR ON SAFARI. https://brianhogg.com/avoid-mailchimp-too-many-attempts-signup-error/
-
+- [] FOOTER = PLEASE JUST STICK TO THE BOTTOM OF THE PAGE PLEASE
+    - tried:https://stackoverflow.com/questions/90178/make-a-div-fill-the-height-of-the-remaining-screen-space?rq=1
+    - tried: https://stackoverflow.com/questions/7527152/div-with-dynamic-min-height-based-on-browser-window-height
+    - current patch = coming soon has a ton of padding
 
 Back burner
 [] Memes and fun content inbetween

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import logo from '../assets/logo.svg';
 
 export default function Navigation() {
 
@@ -19,13 +20,12 @@ export default function Navigation() {
     })
 
     if (width > 768) {
-        console.log("wide")
         return (
             <div className="navbar">
                 <div className="container flex"> 
-                    <h1 className="logo">
-                        <Link to="/">Blockchain Summer</Link>
-                    </h1>
+                    <div className="logo">
+                        <Link to="/"><img alt="logo" src={logo}/></Link>
+                    </div>
                     <nav>
                         <ul>
                         <li><Link to="/miami">Miami</Link></li>
@@ -37,13 +37,12 @@ export default function Navigation() {
             </div>
         );
     } else {
-        console.log("Small")
         return (
             <div className="navbar">
                 <div className="container flex">
-                    <h1 className="logo">
-                        <Link to="/">Blockchain Summer</Link>
-                    </h1>
+                    <div className="logo">
+                        <Link to="/"><img alt="logo" src={logo}/></Link>
+                    </div>
 
                     {   opened ?
                         <CloseIcon onClick={() => setOpened(!opened)} style={{ color: "white" }}/>
