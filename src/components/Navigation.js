@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import logo from '../assets/logo.svg';
+import '../css/Navbar.css';
 
 export default function Navigation() {
 
@@ -33,6 +34,9 @@ export default function Navigation() {
                         <li><Link to="/berlin">Berlin</Link></li>
                         </ul>
                     </nav>
+                    <button className="submit-btn">
+                        <Link to="/submit-event">Submit Event</Link>
+                    </button>
                 </div>
             </div>
         );

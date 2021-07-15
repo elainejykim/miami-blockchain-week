@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import logoWhite from "../assets/logo-white.svg";
+import '../css/Footer.css';
 
 export default function Footer() {
     return (
@@ -14,10 +15,10 @@ export default function Footer() {
                 </div>
 
                 <div className="actions flex ">
-                    <button className="submit-btn btn">
+                    <button className="submit-btn">
                         <Link to="/submit-event">Submit Event</Link>
                     </button>
-                    <button className="subscribe-btn btn">
+                    <button className="subscribe-btn">
                         <Link to="/subscribe">Subscribe to Newsletter</Link>
                     </button>
                 </div>

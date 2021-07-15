@@ -44,6 +44,19 @@
   color: #00C08B;
 }
 
+.submit-btn {
+    border: 1px solid #fff;
+    background-color: #fff;
+    margin: 0 8px;
+    padding: 0.4rem 1.2rem;
+    font-weight: 600;
+    font-family: inter;
+}
+.submit-btn:hover {
+    border-color: var(--green);
+}
+  
+
 .title {
 font-weight: bold;
 font-size: 2em;

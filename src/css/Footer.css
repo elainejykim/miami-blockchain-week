@@ -1,0 +1,57 @@
+/* Footer */
+.footer {
+    /* position: absolute;
+    width: 100%;
+    bottom: 0; stick to bottom */
+    flex: 0 1 50px;
+    background-color: var(--black);
+    padding: 2rem 0;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer .logo {
+    height: 35px;
+    width: auto;
+  }
+  
+  .footer .copyright {
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 10px;
+    margin: 0;
+  }
+  
+  .footer .flex {
+    justify-content: flex-end;
+  }
+  
+  .subscribe-btn {
+    background-color: var(--black);
+    border: 1px solid #fff;
+    margin: 0 8px;
+    padding: 0.4rem 1.2rem;
+    font-weight: 600;
+    font-family: inter;
+  }
+  .subscribe-btn:hover {
+    border-color: var(--green);
+  }
+  .subscribe-btn a {
+    color: #fff;
+  }
+  
+  .footer .actions button a {
+    font-size: 12px;
+  }
+  
+  
+  .fa-twitter {
+    color: white;
+    margin-right: 5px;
+  }
+  
+  

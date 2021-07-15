@@ -1,0 +1,33 @@
+/* Subscription Form */
+.mergeTable .mergeRow {
+    display: flex;
+    margin: 30px 0;
+  }
+  
+  .mergeTable .mergeRow input {
+    border: 0;
+    border: 1px solid var(--black);
+    padding: 10px;
+    margin: 0 2rem;
+  }
+  
+  /* subscribe */
+  .subscription-form input[type="email"] {
+    border: 1px solid #fff;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--black);
+    color: #fff;
+  }
+  
+  .subscription-form .flex {
+    justify-content: flex-start;
+  }
+  
+  .subscription-form .btn {
+    padding: 6px;
+  }
+  
+  .fa-arrow-right {
+    color: white;
+  }

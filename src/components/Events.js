@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import EventCard from "./EventCard";
 import useFirestore from '../hooks/useFirestore';
 import Pagination from '@material-ui/lab/Pagination';
+import '../css/Events.css'; 
 
 export default function Events({
     collection

@@ -1,0 +1,66 @@
+/* Submit Event */
+.form-container {
+    max-width: 570px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 4rem 0;
+}
+
+.event-form .title {
+  margin: 1rem 0;
+}
+  
+.event-form .collection .options {
+  display: flex;
+}
+
+.event-form .collection .option {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+}
+.event-form .collection .option .radio{
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+}
+  
+.event-form .form-control {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.event-form .label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+  
+.event-form .form-control input {
+  border: 2px solid rgba(36, 40, 43, 0.2);
+  padding: 13px;
+  margin-top: 20px;
+}
+
+.event-form .invite-only .form-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input#inviteOnly {
+  margin-top: 0;
+  width: 18px;
+  height: 18px;
+}
+.event-form .invite-only .label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.event-form .submit-row {
+  display: flex;
+  justify-content: space-between;
+}
