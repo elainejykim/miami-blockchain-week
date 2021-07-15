@@ -120,23 +120,6 @@ fieldset {
   min-height: 160px;
 }
 
-.event.event-grid.card:hover {
-  border: 2px solid var(--black);
-  
-}
-
-.event-img {
-  height: 100%;
-}
-
-.event-info .flex {
-  justify-content: space-between;
-}
-
-.event-info .event-info-top p{
-  margin-top:0;
-}
-
 .event h1 {
   font-weight: 800;
   font-size: 18px;
@@ -145,8 +128,31 @@ fieldset {
 
 .event p {
   font-size: 12px;
-  margin: px 0;
   opacity: 0.7;
+}
+
+.event.event-grid.card:hover {
+  border: 2px solid var(--black);  
+}
+
+.event-img {
+  height: 100%;
+}
+
+.event-info .event-info-top p{
+  margin-top:0;
+}
+
+.event-info .event-info-bottom .location {
+  margin-bottom:0;
+}
+
+.event-info .event-info-bottom .flex {
+  justify-content: flex-start;
+}
+
+.event-info .event-info-bottom .price-info p {
+  margin-right: 10px;
 }
 
 /* Submit Event */
@@ -161,7 +167,7 @@ fieldset {
 .event-form input {
   border: 0;
   border: 1px solid var(--black);
-  padding: 10px;
+  padding: 20px;
   margin: 0 2rem;
 }
 

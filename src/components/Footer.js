@@ -14,9 +14,6 @@ export default function Footer() {
                 </div>
 
                 <div className="actions flex ">
-                    <a href="https://twitter.com/JiyounyK" className="icon">
-                        <i className="fab fa-twitter fa-1x "></i>
-                    </a>
                     <button className="submit-btn btn">
                         <Link to="/submit-event">Submit Event</Link>
                     </button>

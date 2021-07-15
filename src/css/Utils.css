@@ -4,6 +4,7 @@
     --royal: #0072CE;
     --near-red: #FF585D;
     --black: #24282B;
+    --orange: #FFB25A;
   }
   
   
@@ -151,6 +152,10 @@ padding: 4rem;
 
 .red-txt {
     color: #FF585D;
+}
+
+.orange-txt {
+    color: var(--orange);
 }
 
 .green-txt {

@@ -34,10 +34,10 @@ export default function EventCard({
                 </p></div>
                 <h1> {title} </h1>
                 <div className="event-info-bottom">  
-                    <p> {location} </p>
-                    <div className="flex">
+                    <p className="location"> {location} </p>
+                    <div className="price-info flex">
                         <p className="green-txt bold"> {price === 0? "FREE" : "$" + price} </p>
-                        <p className="red-txt bold"> {inviteOnly && "*Invite Only"} </p>
+                        <p className="red-txt bold"> {inviteOnly && "INVITE ONLY"} </p>
                     </div>
                 </div>
             </div>
