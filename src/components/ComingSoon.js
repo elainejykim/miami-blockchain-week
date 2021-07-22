@@ -16,7 +16,7 @@ export default function ComingSoon({
                     In the meantime... 
                 </h2>
 
-                <button className="d-txt btn">
+                <button className="d-txt submit-btn">
                     <Link to="/submit-event" className="d-txt">Submit Event</Link>
                 </button>
                 

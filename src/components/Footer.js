@@ -8,10 +8,8 @@ export default function Footer() {
         <div className="footer">
             <div className="container footer-grid">
                 <div className="info">
-                    <div>    
                         <img className="logo" src={logoWhite} alt="logo"/>
                         <p className="copyright">Copyright &copy; 2021</p>
-                    </div>
                 </div>
 
                 <div className="actions flex ">

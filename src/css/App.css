@@ -67,10 +67,11 @@ fieldset {
   padding: 10vh 0;
 }
 
-.coming-soon .btn {
+.coming-soon .submit-btn {
   margin-top: 2rem;
+  border: 1px solid var(--black);
 }
-.coming-soon .btn:hover a{
+.coming-soon .submit-btn:hover a{
   margin-top: 4rem;
   color: #00C08B;
 }
@@ -79,11 +80,6 @@ fieldset {
 /* Tablets and under */
 @media (max-width: 768px) {
   
-  /* Events list */
-  .events-list .container{
-    width: 100%;
-  }
-
   /* Footer */
   .footer .grid{
     grid-template-columns: 1fr;
@@ -99,67 +95,11 @@ fieldset {
     font-size: 2em;
     padding: 0;
   }
-
-  /* Navbar */
-  .navbar svg:hover {
-    background-color:rgba(255,255,255,0.1);
-    border-radius:50%;
-    box-shadow: 0 0 0 7px rgba(255,255,255,0.1);
-  }
-
-  .navbar nav {
-    background-color: rgb(24, 24, 24);
-  }
-
-  .navbar nav ul {
-      display: flex;
-      justify-content: space-between;
-  }
   
 }
 
 /* Mobile */
 @media (max-width: 500px) {
-  
-  /* Navigation */
-  .navbar .logo a img {
-    height: 30px;
-    width: auto;
-  }
-  
-  /* Event List */
-  .event-grid {
-    gap:13px
-  }
-
-  .events-list .container{
-    padding: 0;
-    width: 90%;
-  }
-
-  .events-list .card {
-    padding: 13px;
-  }
-
-  .events-list .title {
-    font-size: 5vw;
-    margin-top: 2rem;
-    font-weight: bold;
-  }
-  
-  .event {
-    min-height: 0;
-  }
-
-  .event h1 {
-    font-weight: 800;
-    font-size: 3vw;
-  }
-  
-  .event p {
-    font-size: 2vw;
-    margin: 2px 0;
-  }
 
   /* Submit Event */
   .form-control {

@@ -37,7 +37,7 @@ export default function Events({
         <section className="events-list">
             <div className="container">
 
-                <h1 className="title flex">Miami Edition</h1>
+                <h1 className="title flex">{collection.charAt(0).toUpperCase() + collection.slice(1)} Edition</h1>
 
                 {docs && docs.slice(slice.start, slice.end).map((doc) => 
                     <EventCard 

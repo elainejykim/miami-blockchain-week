@@ -3,7 +3,7 @@ import React, {useState } from 'react';
 import useInput from '../hooks/useInput';
 // import useStorage from '../hooks/useStorage';
 import { projectFirestore, projectStorage } from '../firebase/config';
-import '../css/SubmitEvent.css';
+import '../css/Forms.css';
 
 export default function SubmitEvent() {
     const { value:collection, bind:bindCollection, reset:resetCollection } = useInput(null);
@@ -128,13 +128,15 @@ export default function SubmitEvent() {
                     <label className="label">Start Date & Time</label>
                     <input 
                         {...bindStartDT}
-                        type="datetime-local" name="startDT" id="startDT" required
+                        className="datetime" type="datetime-local" name="startDT" id="startDT" required
                     ></input>
                 </div>
 
                 <div className="form-control">
                     <label className="label">End Date & Time</label>
-                    <input {...bindEndDT} type="datetime-local" name="endDT" id="endDT" required></input>
+                    <input {...bindEndDT} 
+                        className="datetime" type="datetime-local" name="endDT" id="endDT" required
+                    ></input>
                 </div>
 
                 <div className="form-control">
@@ -166,8 +168,8 @@ export default function SubmitEvent() {
                     ></input>
                 </div>
 
-                <div className="submit-row">
-                    <div className="invite-only form-control">
+                <div className="final-row">
+                    <div className="form-control" id="invite">
                         <input type="checkbox" id="inviteOnly" name="inviteOnly"
                             onChange={() => setInviteOnly(!inviteOnly)}
                             checked={inviteOnly}
@@ -175,7 +177,7 @@ export default function SubmitEvent() {
                         <label className="label" for="inviteOnly">Invite Only</label>
                     </div>
 
-                    <input type="submit" value="Submit" className="btn"></input>
+                    <input type="submit" value="Submit" className="b-btn"></input>
                 </div>
                 
                 

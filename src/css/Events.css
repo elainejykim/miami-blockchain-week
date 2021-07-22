@@ -48,3 +48,43 @@
     margin-right: 10px;
   }
   
+@media (max-width: 768px) {
+  .events-list .container{
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .event-grid {
+    gap:13px
+  }
+
+  .events-list .container{
+    padding: 0;
+    width: 90%;
+  }
+
+  .events-list .card {
+    padding: 13px;
+  }
+
+  .events-list .title {
+    font-size: 5vw;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .event {
+    min-height: 0;
+  }
+
+  .event h1 {
+    font-weight: 800;
+    font-size: 3vw;
+  }
+
+  .event p {
+    font-size: 2vw;
+    margin: 2px 0;
+  }
+}

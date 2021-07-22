@@ -6,10 +6,12 @@
     --black: #24282B;
     --orange: #FFB25A;
   }
-  
-  
 
 /* Utilities */
+html {
+    scroll-behavior: smooth;
+  }
+  
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -31,18 +33,48 @@
     margin: 10px;
 }
 
-.btn {
+.w-btn {
     border: 2px solid var(--black);
     padding: 0.5rem 1rem;
     background-color: #fff;
     font-weight: 600;
+    transition: all 0.3s ease 0s;
 }
 
-.btn:hover {
-  transform: scale(0.98);
+.w-btn:hover {
   border: 2px solid #00C08B;
   color: #00C08B;
 }
+
+.b-btn {
+    padding: 0.5rem 2rem;
+    background-color: var(--black);
+    font-weight: 500;
+    color: white;
+    border: none;
+    transition: all 0.3s ease 0s;
+    height: 40px;
+}
+
+.b-btn:hover {
+    background-color: var(--green);
+}
+
+.g-btn {
+    padding: 0.5rem 2rem;
+    background-color: var(--green);
+    font-weight: 500;
+    color: white;
+    border: none;
+    transition: all 0.3s ease 0s;
+    height: 40px;
+}
+
+.g-btn:hover {
+    /* background-color: #2EE59D; */
+    transform: translateY(-3px);
+}
+
 
 .submit-btn {
     border: 1px solid #fff;
@@ -51,9 +83,11 @@
     padding: 0.4rem 1.2rem;
     font-weight: 600;
     font-family: inter;
+    transition: all 0.3s ease 0s;
 }
 .submit-btn:hover {
-    border-color: var(--green);
+    /* border-color: var(--green); */
+    transform: translateY(-3px);
 }
   
 
@@ -62,6 +96,12 @@ font-weight: bold;
 font-size: 2em;
 margin-top: 4rem;
 margin-bottom: 2rem;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 2rem 0;
 }
 
 /* Margin */
@@ -185,7 +225,7 @@ padding: 4rem;
 
 /* Text sizes */
 .sm {
-    font-size: 1rem;
+    font-size: 14px;
   }
   
 .md {

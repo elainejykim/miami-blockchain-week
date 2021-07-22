@@ -20,7 +20,6 @@ const useStorage = (file) => {
             setUrl(url);
         }) 
     }, [file]);
-
     return {progress, url, error}
 }
 

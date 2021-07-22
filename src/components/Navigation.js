@@ -58,9 +58,9 @@ export default function Navigation() {
                 { opened && 
                         <nav className="container">
                             <ul>
-                                <li><Link to="/miami">Miami</Link></li>
-                                <li><Link to="/paris">Paris</Link></li>
-                                <li><Link to="/berlin">Berlin</Link></li>
+                                <li><Link onClick={() => setOpened(!opened)} to="/miami">Miami</Link></li>
+                                <li><Link onClick={() => setOpened(!opened)} to="/paris">Paris</Link></li>
+                                <li><Link onClick={() => setOpened(!opened)} to="/berlin">Berlin</Link></li>
                             </ul>
                         </nav> 
                     }
