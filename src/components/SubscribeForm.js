@@ -9,9 +9,9 @@ export default function SubscribeForm() {
 
 
     return (
-        <div className="subscription-from form-container">
+        <div className="subscription-form form-container">
             <h2 className="title"> Subscribe </h2>
-            <p> Stay up to date on all the upcoming events! </p>
+            <p className="subtitle"> Stay up to date on all the upcoming events! </p>
 
             <form action="https://blockchain-summer.us6.list-manage.com/subscribe/post" method="POST">
                 <input type="hidden" name="u" value="9284cd7e402767c6a37485de0"/>
