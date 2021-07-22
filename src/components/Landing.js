@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const City = ({city, src}) => {
     let link = "/" + city.toLowerCase();
-    console.log(link);
     return (
         <Link to={link}><div className="city-card">
             <img className="img" alt={city} src={src}/>
